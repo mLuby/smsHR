@@ -1,0 +1,59 @@
+/* Styles the placeholder text*/
+::-webkit-input-placeholder {
+   color: rgba(238,236,108,.7);
+}
+:-moz-placeholder { /* Firefox 18- */
+   color: rgba(238,236,108,.7);
+}
+::-moz-placeholder {  /* Firefox 19+ */
+   color: rgba(238,236,108,.7);
+}
+:-ms-input-placeholder {  
+   color: rgba(238,236,108,.7);
+}
+
+body{    
+    padding-top: 15%; 
+    text-align: center;
+	font-family: monospace; 
+    font-size: 30;
+	font-weight: bold; 
+    color: rgba(1,186,155,1);
+    background-color: rgba(238,236,108,1);
+    background-position: center;
+    background-size: cover;
+}
+/*div{
+	background-color: rgba(0,0,0,.1);
+	width: 70%;
+}*/
+.sentence{
+	font-family: monospace;
+    background: rgba(1,186,155,1);
+    color: rgba(238,236,108,1);
+    font-weight: bold;
+    padding: 7px;
+    margin-right: -18px;
+	padding-left: 10px;
+}
+input{
+	margin-left: 0px; 
+	padding-left: 0px; 
+	background-color: rgb(1, 186, 155); 
+	font-size: 30px; 
+	width: auto; 
+	text-align: center;
+	border: none;
+}
+input[type="text"], input[type="tel"]{
+}
+#button{
+	padding-left: 10px;
+    margin-left: -14;
+}
+#button:hover{
+	background: rgb(238, 236, 108);
+	color: rgb(1, 186, 155);
+	text-decoration: underline;
+
+}

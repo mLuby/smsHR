@@ -3,14 +3,16 @@
 	<head>
 		<title>Send SMS</title>
 		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-		<script type="text/javascript" src="sendsms.js"></script>	
+		<script type="text/javascript" src="sendsms.js"></script>
+		<link rel="stylesheet" type="text/css" href="sendsms.css">
 	</head>
 	<body>
-		<h1>Send SMS</h1>
-		<span id="send" class="send_sentence">Text</span>
-		<input type="text" id="message" class="send_sentence" placeholder="message">
-		<span class="send_sentence">to</span>
-		<input type="tel" id="number" class="send_sentence" placeholder="number">
-		<input type="submit" id="button" class="send_sentence">
+		<div id="container">
+			<h1>Send SMS</h1>
+			<input type="submit" id="button" value="Text" class="sentence" title="Send the text!">
+			<input type="text" id="message" class="sentence" placeholder="message" title="Enter your <160 character message here.">
+			<span class="sentence">to</span>
+			<input type="tel" id="number" class="sentence" placeholder="number" title="Enter the receipient's mobile number here.">
+		</div>
 	</body>
 </html>

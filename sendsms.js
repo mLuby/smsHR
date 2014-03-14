@@ -1,4 +1,5 @@
-debug = true;
+debug = false;
+
 api_url = "http://textbelt.com/text";
 $(document).ready(function() {
 	if(debug){
