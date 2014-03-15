@@ -2,10 +2,17 @@ debug = false;
 
 api_url = "http://textbelt.com/text";
 $(document).ready(function() {
+	// In DEBUG mode, the actual POST request won't be sent, and dummy data fills in the fields.
 	if(debug){
 		$("input#message").val("test v"+Math.round(Date.now()/1000%1000,0));
 		$("input#number").val("9785052128");
 	}
+
+	// // Create a breakpoint for small window sizes.
+	// if( $(window).width() <= 980 ){
+	// 	$("h1").text($(window).width());
+	// 	$("input#message").after("<br />");		
+	// }
 
 	// If user hits [enter], it will click submit.
 	$("input").keypress(function(event) {
@@ -57,26 +64,36 @@ $(document).ready(function() {
 		// else if after stripping all non-numeric characters from number, there are fewer than 10 characters, complain.
 		// else validate number.
 
+		// What to do on successful POST:
+		function onSuccess(info){
+			console.log(message+" -> "+number+":"+JSON.stringify(info));
+			// And inform user of success.
+			$("#send").text("Successfully texted");
+			$("input#message").replaceWith("<span class=\"sentence\">\""+message+"\"</span>");
+			$("input#number").replaceWith("<span class=\"sentence\">"+number+".</span>");
+			$("#button").replaceWith("<span class=\"sentence\">Texted</span>");
+			$('h1').replaceWith("<h1>Sent SMS. <a href=\"\">Another?</a></h1>");
+		}
+
 		if(message_validated && number_validated){
-			// POST to the API...
-			$.ajax({
-				type: "POST",
-				url: api_url,
-				data: "&number="+number+"&message="+message,
-				success: function(info) {
-					console.log(message+" -> "+number+":"+JSON.stringify(info));
-					// And inform user of success.
-					$("#send").text("Successfully texted");
-					$("input#message").replaceWith("<span class=\"sentence\">\""+message+"\"</span>");
-					$("input#number").replaceWith("<span class=\"sentence\">"+number+".</span>");
-					$("#button").replaceWith("<span class=\"sentence\">Texted</span>");
-					$('h1').replaceWith("<h1>Sent SMS. <a href=\"\">Another?</a></h1>");
-				},
-				error: function(info) {
-					// Or log error if POST fails.
-					console.log('Ajax POST failed:'+JSON.stringify(info));
-				}
-			});
+			if(debug){
+				onSuccess('DEBUG MODE');
+			}
+			else{
+				// POST to the API...
+				$.ajax({
+					type: "POST",
+					url: api_url,
+					data: "&number="+number+"&message="+message,
+					success: function(info) {
+						onSuccess(info);
+					},
+					error: function(info) {
+						// Or log error if POST fails.
+						console.log('Ajax POST failed:'+JSON.stringify(info));
+					}
+				});
+			}
 		}
 		else{
 			console.log("Inputs did not pass validation.")

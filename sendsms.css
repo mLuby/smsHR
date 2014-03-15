@@ -1,35 +1,26 @@
-#button::-moz-focus-inner { 
-    border-top: 1px rgba(238,236,108,1);
-    border-bottom: 1px rgba(238,236,108,1);
+/* Reset */
+*{
+	padding: 0em;
+	margin: 0em; 
 }
-/* Styles the placeholder text*/
-::-webkit-input-placeholder {
-   color: rgba(238,236,108,.7);
-}
-:-moz-placeholder { /* Firefox 18- */
-   color: rgba(238,236,108,.7);
-}
-::-moz-placeholder {  /* Firefox 19+ */
-   color: rgba(238,236,108,.7);
-}
-:-ms-input-placeholder {  
-   color: rgba(238,236,108,.7);
-}
+input, textarea, select, a { outline: none; }
+
+
+/* Main styles */
 #container{
-    padding-top: 15%; 	
+    margin-top: 1em; 	
 }
-body, a{  
+body{  
     text-align: center;
 	font-family: monospace; 
-    font-size: 30px;
+    font-size: 60px;
 	font-weight: bold; 
     color: rgba(1,186,155,1);
     background-color: rgba(238,236,108,1);
-    background-position: center;
-    background-size: cover;
 }
-a, a:hover{
-	font-size: 58px;
+a{
+    color: rgba(1,186,155,1);
+    background-color: rgba(238,236,108,1);
 }
 a:hover{
 	background: rgba(1, 186, 155, 1);
@@ -39,29 +30,68 @@ a:hover{
 	font-family: monospace;
     background: rgba(1,186,155,1);
     color: rgba(238,236,108,1);
-    font-weight: bold;
-    padding: 7px;
-    margin-right: -18px;
-	padding-left: 10px;
+	/*margin-bottom: 1em;*/
+	margin-left: -.62em;
 }
-input{
-	margin-left: 0px; 
-	padding-left: 0px; 
+input, textarea{
 	background-color: rgba(1, 186, 155, 1); 
-	font-size: 30px; 
-	width: auto; 
+	font-size: 1em; 
 	text-align: center;
 	border: none;
 }
-input[type="text"], input[type="tel"]{
+#message{
+	width: 9em;
+	resize: horizontal;
+	height: 1.15em;
+	margin-bottom: -.25em;
+}
+#number{
+	width: 12em;
+}
+#number:focus, #message:focus{
+	color: rgba(1, 186, 155, 1);
+	background: rgba(238, 236, 108, 1);
 }
 #button{
-	-webkit-appearance:none;
-	padding-left: 10px;
-    margin-left: -14;
+	font-weight: bold; 
+	text-decoration: underline;
+	padding-right: .5em;
+	padding-left: .5em;
 }
 #button:hover{
 	background: rgba(238, 236, 108, 1);
 	color: rgba(1, 186, 155, 1);
 	text-decoration: underline;
+}
+span{
+	padding-right: .5em;
+	padding-left: .5em;
+}
+
+/* Device and browser-specific hacks. :( */
+*{ /* Prevent iPhone from styling button and rounding corners. */
+    -webkit-appearance:none;
+	border-radius: 0px;
+}
+#button::-moz-focus-inner { /* Fix Mozilla button being +1px on top and bottom. */
+    border-top: 1px rgba(238,236,108,1);
+    border-bottom: 1px rgba(238,236,108,1);
+}
+@-moz-document url-prefix() {
+	#message{
+		height: 1.01em;
+		margin-bottom: 0;
+	}
+}
+::-webkit-input-placeholder { /* Styles the placeholder text in Chrome and Safari*/
+   color: rgba(238,236,108,.7);
+}
+:-moz-placeholder { /* Styles the placeholder text in Firefox 18- */
+   color: rgba(238,236,108,.7);
+}
+::-moz-placeholder { /* Styles the placeholder text in Firefox 19+ */
+   color: rgba(238,236,108,.7);
+}
+:-ms-input-placeholder { /* Styles the placeholder text in IE*/ 
+   color: rgba(238,236,108,.7);
 }
