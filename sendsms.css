@@ -1,3 +1,7 @@
+#button::-moz-focus-inner { 
+    border-top: 1px rgba(238,236,108,1);
+    border-bottom: 1px rgba(238,236,108,1);
+}
 /* Styles the placeholder text*/
 ::-webkit-input-placeholder {
    color: rgba(238,236,108,.7);
@@ -14,7 +18,7 @@
 #container{
     padding-top: 15%; 	
 }
-body, a{    
+body, a{  
     text-align: center;
 	font-family: monospace; 
     font-size: 30px;
@@ -54,7 +58,9 @@ input[type="text"], input[type="tel"]{
 #button{
 	padding-left: 10px;
     margin-left: -14;
-}
+/*    padding-top: 5px;
+    padding-bottom: 5px
+*/}
 #button:hover{
 	background: rgba(238, 236, 108, 1);
 	color: rgba(1, 186, 155, 1);
