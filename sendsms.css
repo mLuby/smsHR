@@ -56,11 +56,10 @@ input{
 input[type="text"], input[type="tel"]{
 }
 #button{
+	-webkit-appearance:none;
 	padding-left: 10px;
     margin-left: -14;
-/*    padding-top: 5px;
-    padding-bottom: 5px
-*/}
+}
 #button:hover{
 	background: rgba(238, 236, 108, 1);
 	color: rgba(1, 186, 155, 1);
