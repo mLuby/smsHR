@@ -7,12 +7,13 @@
 		<link rel="stylesheet" type="text/css" href="sendsms.css">
 	</head>
 	<body>
+		<h1>SMS:</h1>
 		<div id="container">
-			<h1>SMS:</h1>
 			<input type="submit" id="button" value="Send" class="sentence" title="Click or press enter to send the text!">
-			<input type="text" id="message" class="sentence" placeholder="[your message]" title="Enter your message here.">
+			<input type="text" id="message" class="sentence" placeholder="[your message]" onfocus="this.placeholder = ''" onblur="this.placeholder = '[your message]'" title="Enter your message here.">
+			<br />
 			<span class="sentence">to</span>
-			<input type="tel" id="number" class="sentence" placeholder="[their cell number]" title="Enter the receipient's mobile number here.">
+			<input type="tel" id="number" class="sentence" placeholder="[their cell number]" onfocus="this.placeholder = ''" onblur="this.placeholder = '[their cell number]'" title="Enter the receipient's mobile number here.">
 		</div>
 	</body>
 </html>

@@ -1,68 +1,76 @@
-#button::-moz-focus-inner { 
-    border-top: 1px rgba(238,236,108,1);
-    border-bottom: 1px rgba(238,236,108,1);
+/* Reset */
+*{
+	padding: 0em;
+	margin: 0em; 
 }
-/* Styles the placeholder text*/
-::-webkit-input-placeholder {
-   color: rgba(238,236,108,.7);
-}
-:-moz-placeholder { /* Firefox 18- */
-   color: rgba(238,236,108,.7);
-}
-::-moz-placeholder {  /* Firefox 19+ */
-   color: rgba(238,236,108,.7);
-}
-:-ms-input-placeholder {  
-   color: rgba(238,236,108,.7);
-}
-#container{
-    padding-top: 15%; 	
-}
-body, a{  
+input, textarea, select, a { outline: none; }
+
+/* Main styles */
+body{  
     text-align: center;
 	font-family: monospace; 
-    font-size: 30px;
+    font-size: 60px;
 	font-weight: bold; 
     color: rgba(1,186,155,1);
     background-color: rgba(238,236,108,1);
-    background-position: center;
-    background-size: cover;
 }
-a, a:hover{
-	font-size: 58px;
+#container{
+    background: rgba(1,186,155,1); 	
+	-moz-box-shadow:    inset 0 0 10px #000000;
+	-webkit-box-shadow: inset 0 0 10px #000000;
+	box-shadow:         inset 0 0 10px #000000;
+	margin: 0em;
+	padding: .5em;
+	text-align: left;
+	max-height: 5em;
+}
+a{
+    color: rgba(1,186,155,1);
+    background-color: rgba(238,236,108,1);
 }
 a:hover{
-	background: rgba(1, 186, 155, 1);
-	color: rgba(238, 236, 108, 1);
+	background: rgba(1,186,155,1);
+	color: rgba(238,236,108,1);
+	text-decoration: none;
 }
 .sentence{
 	font-family: monospace;
     background: rgba(1,186,155,1);
     color: rgba(238,236,108,1);
-    font-weight: bold;
-    padding: 7px;
-    margin-right: -18px;
-	padding-left: 10px;
 }
 input{
-	margin-left: 0px; 
-	padding-left: 0px; 
-	background-color: rgba(1, 186, 155, 1); 
-	font-size: 30px; 
-	width: auto; 
-	text-align: center;
+	background-color: rgba(1,186,155,1); 
+	font-size: 1em; 
 	border: none;
-}
-input[type="text"], input[type="tel"]{
+	width: auto;
 }
 #button{
-	padding-left: 10px;
-    margin-left: -14;
-/*    padding-top: 5px;
-    padding-bottom: 5px
-*/}
+	font-weight: bold; 
+	text-decoration: underline;
+}
 #button:hover{
 	background: rgba(238, 236, 108, 1);
 	color: rgba(1, 186, 155, 1);
-	text-decoration: underline;
+	text-decoration: none;
+}
+#number:focus, #message:focus{
+	background-color: thin rgba(238,236,108,1) solid;
+	outline: none;
+}
+/* Device and browser-specific hacks. :( */
+*{ /* Prevent iPhone from styling button and rounding corners. */
+    -webkit-appearance:none;
+	border-radius: 0px;
+}
+::-webkit-input-placeholder { /* Styles the placeholder text in Chrome and Safari*/
+   color: rgba(238,236,108,.5);
+}
+:-moz-placeholder { /* Styles the placeholder text in Firefox 18- */
+   color: rgba(238,236,108,1);
+}
+::-moz-placeholder { /* Styles the placeholder text in Firefox 19+ */
+   color: rgba(238,236,108,1);
+}
+:-ms-input-placeholder { /* Styles the placeholder text in IE*/ 
+   color: rgba(238,236,108,.5);
 }
