@@ -23,10 +23,13 @@ body{
 	padding: .5em;
 	text-align: left;
 	max-height: 5em;
+	margin-top: 1em;
+    margin-bottom: 1em;
 }
 a{
     color: rgba(1,186,155,1);
     background-color: rgba(238,236,108,1);
+    padding-left: .1em;
 }
 a:hover{
 	background: rgba(1,186,155,1);
@@ -46,7 +49,6 @@ input{
 }
 #button{
 	font-weight: bold; 
-	text-decoration: underline;
 }
 #button:hover{
 	background: rgba(238, 236, 108, 1);
