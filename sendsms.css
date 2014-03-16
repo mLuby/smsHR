@@ -5,11 +5,7 @@
 }
 input, textarea, select, a { outline: none; }
 
-
 /* Main styles */
-#container{
-    margin-top: 1em; 	
-}
 body{  
     text-align: center;
 	font-family: monospace; 
@@ -18,80 +14,70 @@ body{
     color: rgba(1,186,155,1);
     background-color: rgba(238,236,108,1);
 }
+#container{
+    background: rgba(1,186,155,1); 	
+	-moz-box-shadow:    inset 0 0 10px #000000;
+	-webkit-box-shadow: inset 0 0 10px #000000;
+	box-shadow:         inset 0 0 10px #000000;
+	margin: 0em;
+	padding: .5em;
+	text-align: left;
+	max-height: 5em;
+}
 a{
     color: rgba(1,186,155,1);
     background-color: rgba(238,236,108,1);
 }
 a:hover{
-	background: rgba(1, 186, 155, 1);
-	color: rgba(238, 236, 108, 1);
+	background: rgba(1,186,155,1);
+	color: rgba(238,236,108,1);
+	text-decoration: none;
 }
 .sentence{
 	font-family: monospace;
     background: rgba(1,186,155,1);
     color: rgba(238,236,108,1);
-	/*margin-bottom: 1em;*/
-	margin-left: -.62em;
 }
-input, textarea{
-	background-color: rgba(1, 186, 155, 1); 
+input{
+	background-color: rgba(1,186,155,1); 
 	font-size: 1em; 
-	text-align: center;
 	border: none;
 }
 #message{
-	width: 9em;
-	resize: horizontal;
-	height: 1.15em;
-	margin-bottom: -.25em;
-}
-#number{
-	width: 12em;
-}
-#number:focus, #message:focus{
-	color: rgba(1, 186, 155, 1);
-	background: rgba(238, 236, 108, 1);
+	font-weight: normal;
+	opacity: .5;
+	overflow: auto;
+	max-width: 100%;
+	background-color: blue;
+	display: inline;
 }
 #button{
 	font-weight: bold; 
 	text-decoration: underline;
-	padding-right: .5em;
-	padding-left: .5em;
 }
 #button:hover{
 	background: rgba(238, 236, 108, 1);
 	color: rgba(1, 186, 155, 1);
-	text-decoration: underline;
+	text-decoration: none;
 }
-span{
-	padding-right: .5em;
-	padding-left: .5em;
+#number:focus, #message:focus{
+	background-color: thin rgba(238,236,108,1) solid;
+	outline: none;
 }
-
 /* Device and browser-specific hacks. :( */
 *{ /* Prevent iPhone from styling button and rounding corners. */
     -webkit-appearance:none;
 	border-radius: 0px;
 }
-#button::-moz-focus-inner { /* Fix Mozilla button being +1px on top and bottom. */
-    border-top: 1px rgba(238,236,108,1);
-    border-bottom: 1px rgba(238,236,108,1);
-}
-@-moz-document url-prefix() {
-	#message{
-		height: 1.01em;
-		margin-bottom: 0;
-	}
-}
 ::-webkit-input-placeholder { /* Styles the placeholder text in Chrome and Safari*/
-   color: rgba(238,236,108,.7);
+   color: rgba(238,236,108,.5);
 }
 :-moz-placeholder { /* Styles the placeholder text in Firefox 18- */
-   color: rgba(238,236,108,.7);
+   color: rgba(238,236,108,1);
 }
 ::-moz-placeholder { /* Styles the placeholder text in Firefox 19+ */
-   color: rgba(238,236,108,.7);
+   color: rgba(238,236,108,1);
 }
 :-ms-input-placeholder { /* Styles the placeholder text in IE*/ 
-   color: rgba(238,236,108,.7);
+   color: rgba(238,236,108,.5);
 }
