@@ -9,12 +9,6 @@ $(document).ready(function() {
 		$("#number").val("9785052128");
 	}
 
-	// // Create a breakpoint for small window sizes.
-	// if( $(window).width() <= 980 ){
-	// 	$("h1").text($(window).width());
-	// 	$("input#message").after("<br />");		
-	// }
-
 	// If user hits [enter], it will click submit.
 	$("input").keypress(function(event) {
 	    if (event.which == 13) {
@@ -23,33 +17,20 @@ $(document).ready(function() {
 	    }
 	});
 
-	// Remove and replace #message placeholder text.
-	empty_message = true;
-	$('#message').focus(function(){
-		if($('#message').text() == "[your message]"){
-			$('#message').text("");
-			$('#message').click().click();
-		}
-		$('#message').css('opacity','1');
-		$('#message').css('border','1px thin yellow');
-	});
-	$('#message').blur(function(){
-		if($('#message').text() == ""){
-			$('#message').text("[your message]");
-			$('#message').css('opacity','.5');
-		}
+	$("input").focus(function() {
+		$(this).css('border','none');
 	});
 
 	// When submit button is pressed...
 	$("#button").click(function() {
 		// Collect inputs...
 		console.log("User clicked submit.");
-		message = $("#message").text();
+		message = $("#message").val();
 		number = $("#number").val();
 
 		// Validate message...
 		message_validated = false;
-		if(message.length > 0 & message != "[your message]"){
+		if(message.length > 0){
 			message_validated = true;
 		}
 		else{

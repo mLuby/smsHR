@@ -42,14 +42,7 @@ input{
 	background-color: rgba(1,186,155,1); 
 	font-size: 1em; 
 	border: none;
-}
-#message{
-	font-weight: normal;
-	opacity: .5;
-	overflow: auto;
-	max-width: 100%;
-	background-color: blue;
-	display: inline;
+	width: auto;
 }
 #button{
 	font-weight: bold; 
